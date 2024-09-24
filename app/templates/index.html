@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+<div class="video-background">
+    <video autoplay muted loop id="bg-video">
+        <source src="{% static 'assets/img/background.mp4' %}" type="video/mp4">
+    </video>
+</div>
+<div class="video-text">
+    <p class="large-text">Shop System™</p>
+    <hr class="long-line">
+    <p class="small-text">世界初の金属バインダージェッティングシステムは<br>金属3Dプリンティングを機械工場に導入するために設計されています。<br>標準のターンキーシステムに加えて、Desktop Metalは柔軟性、機能性、価値を高めるために<br>Shop System™+およびShop System™ Proパッケージも提供しています。<br>木材用のShop System Forust Editionも利用可能です。</p>
+</div>
+
+{% endblock %}

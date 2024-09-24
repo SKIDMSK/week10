@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+<div class="container mt-5">
+    <h1 class="text-center py-4 mb-1">System Overview</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{% static 'assets/img/System.jpg' %}" alt="System Overview" class="overview-image">
+        </div>
+        <div class="col-md-6 mt-5 overview-content">
+            <h4>高い生産性</h4>
+            <p>金属粉末にレーザーを照射する方式と比べ最大10倍の生産性。 1日部品100～1,000個の生産能力を持ちます。</p>
+            <h4>選べる拡張性</h4>
+            <p>造形エリアのサイズは4パターン。 最小限の投資で使い始めて、後々拡張することも可能です。</p>
+            <h4>優れた造形品質</h4>
+            <p>1600dpiの高精細バインダージェットプリントによる優れた造形品質。</p>
+            <h4>必要な設備が一式揃う</h4>
+            <p>3Dプリンターから焼結炉(ファーネス)まで、金属3Dプリントに必要な設備を一式ご提供。 安心してご導入いただけます。</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% for news in news_list %}
+            <div class="col-md-3 col-sm-6 mb-4 news-item">
+                <a href="{% url 'homepage:news_detail' news.pk %}">
+                    {% if news.image %}
+                        <img src="{{ news.image.url }}" alt="{{ news.title }}" class="img-fluid">
+                    {% endif %}
+                    <h3>{{ news.title }}</h3>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

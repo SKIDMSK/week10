@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+<div class="container">
+    <h1 class="pt-5 mt-4">{{ news.title }}</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ news.image.url }}" alt="{{ news.title }}" class="img-fluid mb-3">
+            <p>{{ news.body }}</p>
+        </div>
+        <div class="col-md-6 mt-5">
+            {% if news.item1 %}
+                <h3>{{ news.item1 }}</h3>
+                <p>{{ news.content1 }}</p>
+                <h3>{{ news.item2 }}</h3>
+                <p>{{ news.content2 }}</p>
+                <h3>{{ news.item3 }}</h3>
+                <p>{{ news.content3 }}</p>
+            {% endif %}
+            <a href="/news" class="btn btn-primary mt-3">Back to System Overview</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
